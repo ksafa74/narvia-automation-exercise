@@ -1,0 +1,19 @@
+Index: src/test/java/com/cydeo/pages/AutomationHomePage.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.cydeo.pages;\n\nimport com.cydeo.utilities.Driver;\nimport org.openqa.selenium.WebElement;\nimport org.openqa.selenium.support.FindBy;\nimport org.openqa.selenium.support.PageFactory;\n\npublic class AutomationHomePage {\n\n    public AutomationHomePage(){\n\n        PageFactory.initElements(Driver.getDriver(),this);\n    }\n\n    @FindBy(xpath = \"//a[@href=\\\"/login\\\"]\")\n    public WebElement signupLoginButton;\n\n    @FindBy(xpath = \"//b[.='Kasim Safa']\")\n    public WebElement loggedInUserName;\n\n    @FindBy(xpath = \"//a[.=' Delete Account']\")\n    public WebElement deleteAccountButton;\n\n\n\n\n\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/test/java/com/cydeo/pages/AutomationHomePage.java b/src/test/java/com/cydeo/pages/AutomationHomePage.java
+--- a/src/test/java/com/cydeo/pages/AutomationHomePage.java	(revision 3360c98f931444571de5321e43baaa363c25afda)
++++ b/src/test/java/com/cydeo/pages/AutomationHomePage.java	(date 1689090712076)
+@@ -22,6 +22,8 @@
+     public WebElement deleteAccountButton;
+ 
+ 
++    @FindBy(xpath = "//i[@class='fa fa-user']")
++    public WebElement loggedInUser;
+ 
+ 
+ 
