@@ -17,8 +17,8 @@ public class AutomationAccountCreatedPage {
     @FindBy(xpath = "//a[.='Continue']")
     public WebElement continueButton;
 
-    @FindBy(xpath = "//i[@class='fa fa-user']")
-    public WebElement loggedInUser;
+     @FindBy(xpath = "//iframe[@id='aswift_2']")
+    public WebElement iframe;
 
 
 }
