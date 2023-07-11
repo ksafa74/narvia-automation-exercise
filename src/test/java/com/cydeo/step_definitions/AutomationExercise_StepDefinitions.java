@@ -136,7 +136,7 @@ public class AutomationExercise_StepDefinitions {
         Driver.getDriver().switchTo().defaultContent();
         
 
-        Assert.assertTrue(automationAccountCreatedPage.loggedInUser.isDisplayed());
+        Assert.assertTrue(automationHomePage.loggedInUser.isDisplayed());
     }
     @Then("User clicks Delete Account button")
     public void user_clicks_delete_account_button() {
