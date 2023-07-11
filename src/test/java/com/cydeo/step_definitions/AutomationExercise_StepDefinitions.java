@@ -123,12 +123,18 @@ public class AutomationExercise_StepDefinitions {
     public void user_clicks_continue_button() {
 
         automationAccountCreatedPage.continueButton.click();
-        Driver.getDriver().get("https://automationexercise.com/");
-
+        
 
     }
     @Then("User should see that Logged in as username is visible")
     public void user_should_see_that_logged_in_as_username_is_visible() {
+
+        Actions action = new Actions(Driver.getDriver());
+
+        Driver.getDriver().switchTo().frame(automationAccountCreatedPage.iframe);
+        action.click().perform();
+        Driver.getDriver().switchTo().defaultContent();
+        
 
         Assert.assertTrue(automationAccountCreatedPage.loggedInUser.isDisplayed());
     }
