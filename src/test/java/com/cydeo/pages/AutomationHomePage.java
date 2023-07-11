@@ -15,11 +15,11 @@ public class AutomationHomePage {
     @FindBy(xpath = "//a[@href=\"/login\"]")
     public WebElement signupLoginButton;
 
-    @FindBy(xpath = "//b[.='Kasim Safa']")
-    public WebElement loggedInUserName;
-
     @FindBy(xpath = "//a[.=' Delete Account']")
     public WebElement deleteAccountButton;
+   
+    @FindBy(xpath = "//i[@class='fa fa-user']")
+    public WebElement loggedInUser;
 
 
 
