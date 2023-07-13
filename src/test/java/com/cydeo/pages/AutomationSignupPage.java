@@ -2,6 +2,7 @@ package com.cydeo.pages;
 
 import com.cydeo.utilities.Driver;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -70,8 +71,29 @@ public class AutomationSignupPage {
     @FindBy(xpath = "//button[@type='submit']")
     public WebElement createAccountButton;
 
-    public void signUpInfoInputData(String firstName,String lastName,String company,String address1,String address2,String state,String city,String zipcode,String mobileNumber
-    ) {
+    public void signUpInfoInputData1(String password,String birthDay
+            ,String birthMonth,String birthYear){
+
+        Select dayDropdown = new Select(daysDropdown);
+        Select monthDropdown = new Select(monthsDropdown);
+        Select yearDropdown = new Select(yearsDropdown);
+
+        titleMr.click();
+        passwordInput.sendKeys(password);
+        dayDropdown.selectByVisibleText(birthDay);
+        monthDropdown.selectByVisibleText(birthMonth);
+        yearDropdown.selectByVisibleText(birthYear);
+
+        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+        js.executeScript("window.scrollBy(0,2000)");
+
+
+    }
+
+    public void signUpInfoInputData2(String firstName,String lastName,String company,String address1,String address2,String state,String city,String zipcode,String mobileNumber,String country) {
+        Select countryDropDown = new Select(countryDropdown);
+        countryDropDown.selectByVisibleText(country);
+
         firstNameInput.sendKeys(firstName);
         lastNameInput.sendKeys(lastName);
         companyInput.sendKeys(company);
