@@ -7,8 +7,8 @@ import org.openqa.selenium.support.PageFactory;
 
 public class AutomationLoginPage {
 
-    public AutomationLoginPage(){
-        PageFactory.initElements(Driver.getDriver(),this);
+    public AutomationLoginPage() {
+        PageFactory.initElements(Driver.getDriver(), this);
     }
 
     @FindBy(xpath = "(//h2)[3]")
@@ -23,4 +23,10 @@ public class AutomationLoginPage {
 
     @FindBy(xpath = "//button[@data-qa='signup-button']")
     public WebElement signUpButton;
+
+    public void signUp(String fullName, String email) {
+
+        nameInput.sendKeys(fullName);
+        emailInput.sendKeys(email);
+    }
 }
