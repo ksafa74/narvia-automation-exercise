@@ -107,10 +107,8 @@ public class AutomationExercise_StepDefinitions {
     @Then("User should see that Logged in as username is visible")
     public void user_should_see_that_logged_in_as_username_is_visible() {
 
-        Actions action = new Actions(Driver.getDriver());
-
         Driver.getDriver().switchTo().frame(automationAccountCreatedPage.iframe);
-        action.click().perform();
+        automationAccountCreatedPage.dismissButton.click();
         Driver.getDriver().switchTo().defaultContent();
 
         Assert.assertTrue(automationHomePage.loggedInUser.isDisplayed());

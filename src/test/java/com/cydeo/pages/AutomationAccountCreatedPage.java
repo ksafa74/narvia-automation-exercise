@@ -7,18 +7,22 @@ import org.openqa.selenium.support.PageFactory;
 
 public class AutomationAccountCreatedPage {
 
-    public AutomationAccountCreatedPage(){
-        PageFactory.initElements(Driver.getDriver(),this);
+    public AutomationAccountCreatedPage() {
+        PageFactory.initElements(Driver.getDriver(), this);
 
     }
+
     @FindBy(xpath = "//b[.='Account Created!']")
     public WebElement accountCreated;
 
     @FindBy(xpath = "//a[.='Continue']")
     public WebElement continueButton;
 
-     @FindBy(xpath = "//iframe[@id='aswift_2']")
+    @FindBy(xpath = "//iframe[@id='aswift_2']")
     public WebElement iframe;
+
+    @FindBy(xpath = "//div[@id='dismiss-button']")
+    public WebElement dismissButton;
 
 
 }
